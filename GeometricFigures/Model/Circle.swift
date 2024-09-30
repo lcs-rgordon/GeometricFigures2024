@@ -14,7 +14,7 @@ protocol Describable {
 struct Circle: Describable {
     
     // MARK: Stored properties
-    let radius: Double
+    var radius: Double
     
     // MARK: Computed properties
     var diameter: Double {

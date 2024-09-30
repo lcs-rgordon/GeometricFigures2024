@@ -8,8 +8,38 @@
 import SwiftUI
 
 struct CircleView: View {
+    
+    // MARK: Stored properties
+    
+    // Describes circle the user is controlling through the UI
+    @State var currentCircle = Circle(radius: 1.0)
+    
+    // MARK: Computed properties
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image("Circle")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            
+            Text("Radius")
+                .bold()
+            
+            HStack {
+                Text("1")
+                Slider(
+                    value: $currentCircle.radius,
+                    in: 1...100,
+                    step: 1
+                )
+                Text("100")
+            }
+            .padding()
+            
+            Text("\(currentCircle.radius.formatted())")
+                        
+            Spacer()
+        }
     }
 }
 
