@@ -16,13 +16,14 @@ struct CircleView: View {
     
     // MARK: Computed properties
     var body: some View {
-        VStack {
+        VStack(spacing: 10) {
             Image("Circle")
                 .resizable()
                 .scaledToFit()
                 .padding()
             
             Text("Radius")
+                .font(.title3)
                 .bold()
             
             HStack {
@@ -34,12 +35,31 @@ struct CircleView: View {
                 )
                 Text("100")
             }
-            .padding()
             
             Text("\(currentCircle.radius.formatted())")
-                        
+                                    
+            Divider()
+            
+            Text("Diameter")
+                .font(.title3)
+                .bold()
+            Text("\(currentCircle.diameter.formatted()) units")
+
+            Text("Area")
+                .font(.title3)
+                .bold()
+            Text("\(currentCircle.area.formatted()) square units")
+
+            Text("Circumference")
+                .font(.title3)
+                .bold()
+
+            Text("\(currentCircle.circumference.formatted()) units")
+            
             Spacer()
+
         }
+        .padding()
     }
 }
 
